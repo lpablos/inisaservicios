@@ -1,22 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
 
 function App() {
     return (
-        <ChakraProvider>
-            <div>
-                <h1>Bienvenido a Chakra UI en Laravel</h1>
-                {/* Agrega aquí los componentes de Chakra UI que necesites */}
-            </div>
-        </ChakraProvider>
+        <Router>
+            <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+            </Routes>
+        </Router>
     );
 }
 
-ReactDOM.createRoot(document.getElementById('app')).render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>
-);
+export default App;
+
+
+
 
 

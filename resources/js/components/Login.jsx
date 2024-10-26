@@ -1,20 +1,20 @@
+// Login.jsx
 import React, { useState } from 'react';
 import { Box, Button, Input, FormControl, FormLabel, Heading, VStack, Text } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 import axios from 'axios';
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate(); // Hook para la navegación
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/login', {
-                email,
-                password
-            });
-            console.log(response.data);
+            const response = await axios.post('/login', { email, password });
+            navigate('/dashboard'); // Redirige al dashboard si el login es exitoso
         } catch (err) {
             setError('Credenciales inválidas');
         }
@@ -55,3 +55,5 @@ function Login() {
 }
 
 export default Login;
+
+

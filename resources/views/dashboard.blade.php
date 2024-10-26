@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    @viteReactRefresh
-    @vite('resources/js/main.jsx')
+    <title>Dashboard</title>
 </head>
 <body>
-    <div id="app"></div> <!-- Div con id 'app_test' -->
+    <h1>Bienvenido al Dashboard</h1>
 </body>
 </html>
-
